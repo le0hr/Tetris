@@ -1,7 +1,7 @@
-#My simple Tetris copy🧱
+# My simple Tetris copy🧱
 ====
 
-##Installation⚡:
+## Installation⚡:
 
 ### 1.Clone repositorry:
 ```bash
@@ -33,3 +33,4 @@ $ python graphic.py
     * ⬅️LeftArrow -- move brick 1 title left
     * ➡️RightArrow -- move brick 1 title right
     * ⬆️UpArrow -- rotate brick for 90 degrees
+
