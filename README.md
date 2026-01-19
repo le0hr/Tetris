@@ -1,5 +1,5 @@
 # My simple Tetris copy🧱
-====
+
 
 ## Installation⚡:
 
@@ -27,10 +27,11 @@ If the game ends, restart with:
 ```bash
 $ python graphic.py
 ```
-====
+
 ##Game Controls:
 
     * ⬅️LeftArrow -- move brick 1 title left
     * ➡️RightArrow -- move brick 1 title right
     * ⬆️UpArrow -- rotate brick for 90 degrees
+
 
