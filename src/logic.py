@@ -65,7 +65,7 @@ class Brick:
                         [[-1,3],[-1,4],[-1,5],[-1,6]]]
             
 
-    def Copy(self, arr, x, y, z, a):    #Функція копіювання списків
+    def copy(self, arr, x, y, z, a):    #Функція копіювання списків
         qq = [[["..", 0],["..", 0],["..", 0],["..", 0],["..", 0],["..", 0],["..", 0],["..", 0],["..", 0],["..", 0]],
         [["..", 0],["..", 0],["..", 0],["..", 0],["..", 0],["..", 0],["..", 0],["..", 0],["..", 0],["..", 0]],
          [["..", 0],["..", 0],["..", 0],["..", 0],["..", 0],["..", 0],["..", 0],["..", 0],["..", 0],["..", 0]],
@@ -104,7 +104,7 @@ class Brick:
 
 
 
-def Fall ( Tetramino, field, static):
+def fall ( Tetramino, field, static):
         
         field= Tetramino.Copy(static, 17, 10,2, 0)
         for i in range(4):
@@ -207,7 +207,7 @@ def move(Tetramino, static, field):
 
     return field
 
-def Check(Tetramino,static):
+def check(Tetramino,static):
     try:
         for i in range (4):
             n = 1
@@ -287,15 +287,17 @@ def start(screen):
         Tetramino = Brick()
         while True:
             
-            InAir = Check(Tetramino,static)
+            InAir = check(Tetramino,static)
             if InAir == False:
                 if Tetramino.fig[Tetramino.Rotation][0][0]<0:
                     Gameover = True
-                static = field
+                else:
+                                    
+                    static = clear(field)
                 break
             field = move(Tetramino, static, field)
             a = time.time()
-            field = Fall( Tetramino, field, static) 
+            field = fall( Tetramino, field, static) 
             
             time.sleep(math.fabs(1/Tetramino.FPS))   
 
@@ -304,7 +306,7 @@ def start(screen):
             GOSurface = pygame.Surface((480, 808))
             GOSurface.fill((0,0,0))
             GOSurface.set_alpha(200)
-            sourceGO_image = pygame.image.load('pic\—Pngtree—game over pixel transparent background_5995763.png').convert_alpha()
+            sourceGO_image = pygame.image.load('pic\gameover.png').convert_alpha()
             GameOver_image = pygame.transform.scale(sourceGO_image, (320, 320))
             GOSurfaceIMG = pygame.Surface((320, 320))
             GOSurfaceIMG.blit(GameOver_image, (0,0))
